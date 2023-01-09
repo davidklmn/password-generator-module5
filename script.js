@@ -91,11 +91,12 @@ var upperCasedCharacters = [
 
 // To start we have to get some variables to store prompt/confirm values
 var passwordLength = 0;
-var passArray = [];
-var lovercase = false;
+var lowercase = false;
 var uppercase = false;
 var numeric = false;
 var special = false;
+var characters = [];
+var pass = "";
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -104,18 +105,42 @@ function getPasswordOptions() {
     "How long password would you like to generate? (10 - 64)"
   );
   //Asking the user about the password characters
-  lovercase = confirm("Do you want lowercase characters in your password?");
+  lowercase = confirm("Do you want lowercase characters in your password?");
   uppercase = confirm("Do you want uppercase characters in your password?");
   numeric = confirm("Do you want numeric characters in your password?");
   special = confirm("Do you want special characters in your password?");
+
+  if (lowercase === true) {
+    characters = characters.concat(lowerCasedCharacters);
+  }
+  if (uppercase === true) {
+    characters = characters.concat(upperCasedCharacters);
+  }
+  if (numeric === true) {
+    characters = characters.concat(numericCharacters);
+  }
+  if (special === true) {
+    characters = characters.concat(specialCharacters);
+  }
+  if (characters.length === 0) {
+    alert("You need to choose at least one character type!");
+    getPasswordOptions();
+  }
 }
 
 // Function for getting a random element from an array
-function getRandom(arr) {}
+function getRandom() {
+  for (let i = 0; i < passwordLength; i++) {
+    var index = characters[Math.floor(Math.random() * characters.length)];
+    pass += index;
+  }
+  console.log(pass);
+}
 
 // Function to generate password with user input
 function generatePassword() {
   getPasswordOptions();
+  getRandom();
 }
 
 // Get references to the #generate element
