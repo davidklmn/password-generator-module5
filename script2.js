@@ -100,7 +100,6 @@ var finalPass = "";
 // Function to prompt user for password options
 function getPasswordOptions() {
   pass = "";
-  characters = [];
   //Asking the user of the lentgh of password between 10 - 64
   passwordLength = prompt(
     "How long password would you like to generate? (10 - 64)"
