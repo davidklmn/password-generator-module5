@@ -1,7 +1,7 @@
 # password-generator-module5
 Password generator challenge for module 5
 
-##Description
+## Description
 
 In this challenge I created a password generator. 
 After pressing the button the user will be asked about the desired length of the password, also asked about the inclusion of different characters.
