@@ -145,13 +145,13 @@ function getRandom() {
     var index = characters[Math.floor(Math.random() * characters.length)];
     pass += index;
   }
-  password = pass;
 }
 
 // Function to generate password with user input
 function generatePassword() {
   getPasswordOptions();
   getRandom();
+  return pass;
 }
 
 // Get references to the #generate element
