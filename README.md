@@ -1,7 +1,9 @@
 # password-generator-module5
+
 Password generator challenge for module 5
 <br />
 **Please note there is 2 JS files. I had two attempts on this challenge and I am currently using script2.js**
+https://davidklmn.github.io/password-generator-module5/
 
 ## Description
 
