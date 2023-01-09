@@ -95,7 +95,6 @@ var lowercase = false;
 var uppercase = false;
 var numeric = false;
 var special = false;
-var characters = [];
 var finalPass = "";
 
 // Function to prompt user for password options
