@@ -100,6 +100,8 @@ var pass = "";
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+  pass = "";
+  characters = [];
   //Asking the user of the lentgh of password between 10 - 64
   passwordLength = prompt(
     "How long password would you like to generate? (10 - 64)"
@@ -109,7 +111,7 @@ function getPasswordOptions() {
   uppercase = confirm("Do you want uppercase characters in your password?");
   numeric = confirm("Do you want numeric characters in your password?");
   special = confirm("Do you want special characters in your password?");
-
+  // Checking the user inputs
   if (lowercase === true) {
     characters = characters.concat(lowerCasedCharacters);
   }
@@ -122,8 +124,17 @@ function getPasswordOptions() {
   if (special === true) {
     characters = characters.concat(specialCharacters);
   }
+  // Checking if the user selected at least one character type
   if (characters.length === 0) {
     alert("You need to choose at least one character type!");
+    getPasswordOptions();
+  }
+  //Checking if the length is between 10-64
+  if (passwordLength < 10) {
+    alert("Password mut be longer than 9 characters");
+    getPasswordOptions();
+  } else if (passwordLength > 64) {
+    alert("Password mut be shorter than 65 characters");
     getPasswordOptions();
   }
 }
@@ -134,7 +145,7 @@ function getRandom() {
     var index = characters[Math.floor(Math.random() * characters.length)];
     pass += index;
   }
-  console.log(pass);
+  password = pass;
 }
 
 // Function to generate password with user input
